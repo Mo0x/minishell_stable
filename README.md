@@ -69,8 +69,8 @@ heredoc line 1
 heredoc line 2
 EOF
 minishell$ echo $?
-
-Debugging
+```
+### Debugging
 Valgrind (recommended)
 
 Readline often reports “leaks” that are not yours; suppress them using the repository suppression file:
@@ -86,10 +86,8 @@ File descriptor sanity
 
 A classic Minishell bug is leaking FDs across pipelines/redirections. Tools like:
 
-    lsof -p <pid>
+lsof -p <pid>
 
-    valgrind --track-fds=yes
+valgrind --track-fds=yes
 
 help catch it early.
-
-
